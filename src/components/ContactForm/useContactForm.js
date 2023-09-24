@@ -39,18 +39,6 @@ export default function useContactForm(onSubmit, ref) {
     },
   }), []);
 
-  // useEffect(() => {
-  //   const refObject = ref;
-  //   refObject.current = {
-  //     setFieldsValues: (contact) => {
-  //       setName(contact.name);
-  //       setEmail(contact.email);
-  //       setPhone(contact.phone);
-  //       setCategoryId(contact.category_id);
-  //     },
-  //   };
-  // });
-
   useEffect(() => {
     async function loadCategories() {
       try {
