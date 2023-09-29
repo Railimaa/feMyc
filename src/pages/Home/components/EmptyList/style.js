@@ -15,4 +15,16 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.colors.primary.main};
     }
   }
+
+  .description {
+    p {
+      color: ${({ theme }) => theme.colors.gray[200]};
+      text-align: center;
+      margin-top: 8px;
+
+      strong {
+        color: ${({ theme }) => theme.colors.primary.main};
+      }
+    }
+  }
 `;

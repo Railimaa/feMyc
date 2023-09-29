@@ -8,6 +8,7 @@ export function useCategories() {
   const [isLoadingDeleteCategory, setIsLoadingDeleteCategory] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [categoryIsBegninEdited, setCategoryIsBegninEdited] = useState(null);
+  const [hasError, setHasError] = useState(false);
 
   function handleOpenModal(category) {
     setCategoryIsBegninEdited(category);
@@ -50,14 +51,14 @@ export function useCategories() {
     try {
       setIsLoading(true);
 
+      setHasError(false);
+
       const categoriesList = await CategoriesService.listCategories();
 
       setCategories(categoriesList);
     } catch {
-      toast({
-        type: 'danger',
-        text: 'Erro ao carregar categorias!',
-      });
+      setHasError(true);
+      setCategories([]);
     } finally {
       setIsLoading(false);
     }
@@ -66,6 +67,10 @@ export function useCategories() {
   useEffect(() => {
     loadCategories();
   }, [loadCategories]);
+
+  function handleTryAgain() {
+    loadCategories();
+  }
 
   return {
     categories,
@@ -77,5 +82,7 @@ export function useCategories() {
     handleCLoseModal,
     handleOpenModal,
     handleDeleteCategory,
+    hasError,
+    handleTryAgain,
   };
 }

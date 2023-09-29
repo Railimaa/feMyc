@@ -59,7 +59,7 @@ export default function Home() {
       />
 
       {hasError && (
-        <ErrorStatus onTryAgain={handleTryAgain} />
+        <ErrorStatus onTryAgain={handleTryAgain} title="contatos" />
       )}
 
       {!hasError && (
