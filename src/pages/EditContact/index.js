@@ -18,6 +18,7 @@ export default function EditContact() {
 
       <PageHeader
         title={isLoading ? 'Carregando...' : `Editar ${contactName}`}
+        path="/"
       />
 
       <ContactForm

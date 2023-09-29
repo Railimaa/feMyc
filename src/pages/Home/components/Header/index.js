@@ -7,15 +7,21 @@ export default function Header({ hasError, qtyOfContacts, qtyOfFilteredContacts 
   const alignment = hasError ? 'flex-end' : (qtyOfContacts > 0 ? 'space-between' : 'center');
 
   return (
+
     <Container justifyContent={alignment}>
       {(!hasError && qtyOfContacts > 0) && (
-      <strong>
-        {qtyOfFilteredContacts}
-        {qtyOfFilteredContacts === 1 ? ' contato' : ' contatos'}
-      </strong>
+        <strong>
+          {qtyOfFilteredContacts}
+          {qtyOfFilteredContacts === 1 ? ' contato' : ' contatos'}
+        </strong>
       )}
-      <Link to="/new">Novo contato</Link>
+
+      <div className="links">
+        <Link to="/new">Novo contato </Link>
+        <Link to="/categories">Categorias</Link>
+      </div>
     </Container>
+
   );
 }
 

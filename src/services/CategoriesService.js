@@ -11,6 +11,18 @@ class CategoriesService {
 
     return categories.map(CategoryMapper.toDomain);
   }
+
+  createCategory(body) {
+    return this.httpClient.post('/categories', { body });
+  }
+
+  update(id, body) {
+    return this.httpClient.put(`/categories/${id}`, { body });
+  }
+
+  deleteCategory(id) {
+    return this.httpClient.delete(`/categories/${id}`);
+  }
 }
 
 export default new CategoriesService();

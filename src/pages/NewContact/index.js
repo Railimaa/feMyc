@@ -9,6 +9,7 @@ export default function NewContact() {
     <>
       <PageHeader
         title="Novo contato"
+        path="/"
       />
 
       <ContactForm

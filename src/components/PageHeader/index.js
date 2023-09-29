@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { Container } from './style';
 import arrow from '../../assets/icons/arrow.svg';
 
-export function PageHeader({ title }) {
+export function PageHeader({ title, path }) {
   return (
     <Container>
-      <Link to="/">
+      <Link to={path}>
         <img src={arrow} alt="Back" />
         <span>Voltar</span>
       </Link>
@@ -17,5 +17,6 @@ export function PageHeader({ title }) {
 }
 
 PageHeader.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  path: PropTypes.string.isRequired,
 };

@@ -1,24 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: ${({ justifyContent }) => justifyContent};
-  margin-top: 32px;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.gray[100]};
-  padding-bottom: 16px;
-
-  strong {
-    color: ${({ theme }) => theme.colors.gray[900]};
-    font-size: 24px;
-  }
-
-  .links {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 2px solid ${({ theme }) => theme.colors.gray[100]};
+    margin-bottom: 20px;
+
+
+    strong {
+      font-size: 24px;
+    }
 
     a {
       display: flex;
@@ -37,5 +30,4 @@ export const Container = styled.header`
         border: 2px solid black;
       }
     }
-  }
 `;

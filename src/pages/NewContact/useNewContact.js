@@ -1,9 +1,12 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ContactsService from '../../services/ContactsService';
 import toast from '../../utils/toast';
 
 export default function useNewContact() {
   const contactFormRef = useRef(null);
+
+  const navigate = useNavigate();
 
   async function handleSubmit(contact) {
     try {
@@ -15,6 +18,7 @@ export default function useNewContact() {
         type: 'success',
         text: 'Contato cadastrado com sucesso',
       });
+      navigate('/', { replace: true });
     } catch {
       toast({
         type: 'danger',
